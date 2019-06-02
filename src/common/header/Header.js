@@ -67,7 +67,7 @@ class Header extends Component {
             ownerInfo: [],
             loggedIn: sessionStorage.getItem("access-token") == null ? false : true
         }
-        this.baseUrl = "https://api.instagram.com/v1/users/self/?access_token=13521022383.d5e23ae.c9785a17269b494eb996c2cbc490a6f3";
+        this.baseUrl = "https://api.instagram.com/v1/users/self/?access_token=8661035776.d0fcd39.39f63ab2f88d4f9c92b0862729ee2784";
     }
 
     profilePageLinkHandler = () => {

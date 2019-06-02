@@ -165,7 +165,7 @@ class Profile extends Component {
                 });
             }
         })
-        xhr.open("GET", this.props.baseUrl + "?access_token=13521022383.d5e23ae.c9785a17269b494eb996c2cbc490a6f3");
+        xhr.open("GET", this.props.baseUrl + "?access_token=8661035776.d0fcd39.39f63ab2f88d4f9c92b0862729ee2784");
         xhr.send(ownerData);
 
         // Get media info of owner after authenticated by accessToken
@@ -179,7 +179,7 @@ class Profile extends Component {
                 });
             }
         })
-        xhrMediaData.open("GET", this.props.baseUrl + "media/recent/?access_token=13521022383.d5e23ae.c9785a17269b494eb996c2cbc490a6f3");
+        xhrMediaData.open("GET", this.props.baseUrl + "media/recent/?access_token=8661035776.d0fcd39.39f63ab2f88d4f9c92b0862729ee2784");
         xhrMediaData.send(mediaData);
 
         let currentState = this.state;
