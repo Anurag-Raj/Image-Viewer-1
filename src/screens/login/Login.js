@@ -66,7 +66,6 @@ class Login extends Component {
 
             <div>
                 <Header heading="Image Viewer" />
-
                 <div className="cardStyle">
                     <Card>
                         <CardContent>
