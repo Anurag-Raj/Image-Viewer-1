@@ -12,13 +12,12 @@ import Card from '@material-ui/core/Card';
 import CardHeader from '@material-ui/core/CardHeader';
 import CardContent from '@material-ui/core/CardContent';
 import Avatar from '@material-ui/core/Avatar';
-//import Header from '../../common/header/Header';
+import Header from '../../common/header/Header';
 import FormControl from '@material-ui/core/FormControl';
 import FormHelperText from '@material-ui/core/FormHelperText';
 import InputLabel from '@material-ui/core/InputLabel';
 import Button from '@material-ui/core/Button';
 import hearticon from '../../assets/icon/hearticon.svg';
-
 
 
 //import hearticon_black from '../../assets/icon/hearticon_black.svg';
@@ -71,12 +70,10 @@ class Home extends Component {
             unixDateTimestamp: [],
             ownerInfo: [],
             mediaInfo: [],
+            anchorEl:null,
             isHeartIconSelected :false,
             imagecomment:"",
             addComment:"dispComment",
-           
-            
-
         }
     }
 
@@ -111,7 +108,7 @@ class Home extends Component {
                 });
             }
         })
-        xhr.open("GET", this.props.baseUrl + "?access_token=13521022383.d5e23ae.c9785a17269b494eb996c2cbc490a6f3");
+        xhr.open("GET", this.props.baseUrl + "?access_token=8661035776.d0fcd39.39f63ab2f88d4f9c92b0862729ee2784");
         xhr.send(ownerData);
 
         // Get media info of owner after authenticated by accessToken
@@ -128,7 +125,7 @@ class Home extends Component {
                 });
             }
         })
-        xhrMediaData.open("GET", this.props.baseUrl + "media/recent/?access_token=13521022383.d5e23ae.c9785a17269b494eb996c2cbc490a6f3");
+        xhrMediaData.open("GET", this.props.baseUrl + "media/recent/?access_token=8661035776.d0fcd39.39f63ab2f88d4f9c92b0862729ee2784");
         xhrMediaData.send(mediaData);
        
     }
@@ -147,7 +144,8 @@ class Home extends Component {
 
         return (
             <div>
-            
+                <Header/>
+
                 <div className= "cardStyle">
                     <br />
                     <GridList cellHeight={"auto"} className={classes.gridListMain} cols={2}>

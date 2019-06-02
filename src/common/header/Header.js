@@ -18,7 +18,6 @@ class Header extends Component {
             <div>
                 <header className="app-header app-logo">
                   Image Viewer
-                                        
                 </header>
             </div>
         )
