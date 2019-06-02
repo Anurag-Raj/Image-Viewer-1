@@ -10,7 +10,6 @@ import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 import FormHelperText from '@material-ui/core/FormHelperText';
 
-
 /*Class component Login defined with constructor & it's states */
 
 class Login extends Component {
@@ -18,6 +17,7 @@ class Login extends Component {
     constructor() {
         super();
         this.state = {
+            anchorEl: null,
             usernamePasswordIncorrect: "dispNone",
             usernameRequired: "dispNone",
             passwordRequired: "dispNone",
@@ -37,17 +37,18 @@ class Login extends Component {
 
         if (this.state.username === mockUsernameInstagram && this.state.password === mockPasswordInstagram) {
             window.sessionStorage.setItem("access-token", accessToken);
-            /*this is the history object where the push method available in the history object is used 
+            /*this is the history object where the push method available in the history object is used
              to redirecting the user to the Home page when a user logins successfully.*/
             this.props.history.push('/home/');
+
         }
 
         this.state.username === "" ? this.setState({ usernameRequired: "dispBlock" }) : this.setState({ usernameRequired: "dispNone" });
         this.state.password === "" ? this.setState({ passwordRequired: "dispBlock" }) : this.setState({ passwordRequired: "dispNone" });
 
         (this.state.username !== "") & (this.state.password !== "") & (this.state.username !== mockUsernameInstagram || this.state.password !== mockPasswordInstagram) ? this.setState({ usernamePasswordIncorrect: "dispBlock" }) : this.setState({ usernamePasswordIncorrect: "dispNone" });
-    
-}
+
+    }
 
     inputUsernameChangeHandler = (e) => {
         this.setState({ username: e.target.value })
@@ -59,15 +60,12 @@ class Login extends Component {
 
     /* Rendering JSX elements on the Login Page as per the design requirements */
 
-    /* Header needs to be edited */
-
     render() {
 
         return (
 
             <div>
                 <Header heading="Image Viewer" />
-
                 <div className="cardStyle">
                     <Card>
                         <CardContent>
@@ -90,8 +88,6 @@ class Login extends Component {
                         </CardContent>
                     </Card>
                 </div>
-
-
             </div>
         )
     }
